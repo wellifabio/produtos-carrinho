@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://wellifabio.github.io/produtos-cards/assets/carrinho.png" type="image/x-icon">
+    <title>Produtos em Promoção</title>
+</head>
+<body  onload="listarProdutos()">
+    <header>
+        <h1>Produtos em Promoção</h1>
+        <nav>
+            <img src="https://wellifabio.github.io/produtos-cards/assets/carrinho2.png" onclick="compras.classList.remove('oculto');" alt="Carrinho de compras">
+        </nav>
+    </header>
+    <main>
+        <div class="conteiner"></div>
+    </main>
+    <footer>
+        <h2>By wellifabio</h2>
+    </footer>
+    <div id="mensagem" class="modal oculto">
+        <div class="janela">
+            <h3 id="texto"></h3>
+            <button onclick="mensagem.classList.add('oculto')">Ok</button>
+        </div>
+    </div>
+    <div id="detalhes" class="modal oculto">
+        <div class="janela">
+            <h3 id="titulo"></h3>
+            <img id="img">
+            <p id="descricao"></p>
+            <p id="preco"></p>
+            <p id="peso"></p>
+            <p id="frete"></p>
+            <p id="total"></p>
+            <button onclick="detalhes.classList.add('oculto');modalMensagem('Esta funcionalida está<br>em desenvolvimento')">Colocar no carrinho</button>
+        </div>
+    </div>
+    <div id="compras" class="modal oculto">
+        <div class="janela">
+            <h3>Carrinho de compras</h3>
+            <table>
+                <thead>
+                    <th>Id</th>
+                    <th>Produto</th>
+                    <th>Descrição</th>
+                    <th>Foto</th>
+                    <th>Total</th>
+                </thead>
+                <tbody id="carrinho">
+                </tbody>
+            </table>
+            <p>Total R$</p>
+            <button onclick="compras.classList.add('oculto');modalMensagem('Esta funcionalida está em desenvolvimento<br>Em breve você poderá desfrutar de compras emcionantes')">Concluir compra</button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
