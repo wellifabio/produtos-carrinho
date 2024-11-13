@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="https://wellifabio.github.io/produtos-cards/assets/carrinho.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://wellifabio.github.io/produtos-cards/assets/carrinho.png"
+        type="image/x-icon">
     <title>Produtos em Promoção</title>
 </head>
-<body  onload="listarProdutos()">
+
+<body onload="listarProdutos()">
     <header>
         <h1>Produtos em Promoção</h1>
         <nav>
-            <img src="https://wellifabio.github.io/produtos-cards/assets/carrinho2.png" onclick="compras.classList.remove('oculto');" alt="Carrinho de compras">
+            <img src="https://wellifabio.github.io/produtos-cards/assets/carrinho2.png"
+                onclick="carrinhoCompras.classList.remove('oculto');" alt="Carrinho de compras">
         </nav>
     </header>
     <main>
@@ -28,34 +32,44 @@
     </div>
     <div id="detalhes" class="modal oculto">
         <div class="janela">
-            <h3 id="titulo"></h3>
-            <img id="img">
+            <div class="cabecalho">
+                <h3 id="titulo"></h3>
+                <button onclick="detalhes.classList.add('oculto')">X</button>
+            </div>
+            <p>Id do produto: <label id="idProd"></label></p>
+            <img class="img-detalhes" id="img">
             <p id="descricao"></p>
             <p id="preco"></p>
             <p id="peso"></p>
             <p id="frete"></p>
             <p id="total"></p>
-            <button onclick="detalhes.classList.add('oculto');modalMensagem('Esta funcionalida está<br>em desenvolvimento')">Colocar no carrinho</button>
+            <button onclick="detalhes.classList.add('oculto');adicionarCarrinho(idProd.innerHTML)">Adicionar ao Carrinho</button>
         </div>
     </div>
-    <div id="compras" class="modal oculto">
+    <div id="carrinhoCompras" class="modal oculto">
         <div class="janela">
-            <h3>Carrinho de compras</h3>
+            <div class="cabecalho">
+                <h3>Carrinho de compras</h3>
+                <button onclick="carrinhoCompras.classList.add('oculto')">X</button>
+            </div>
             <table>
                 <thead>
                     <th>Id</th>
                     <th>Produto</th>
                     <th>Descrição</th>
                     <th>Foto</th>
+                    <th>Quantidade</th>
                     <th>Total</th>
                 </thead>
-                <tbody id="carrinho">
+                <tbody id="corpoCarrinho">
                 </tbody>
             </table>
-            <p>Total R$</p>
-            <button onclick="compras.classList.add('oculto');modalMensagem('Esta funcionalida está em desenvolvimento<br>Em breve você poderá desfrutar de compras emcionantes')">Concluir compra</button>
+            <p id="totalCarrinho">Total R$</p>
+            <button
+                onclick="carrinhoCompras.classList.add('oculto');modalMensagem('Esta funcionalida está em desenvolvimento<br>Em breve você poderá desfrutar de compras emcionantes')">Enviar Pedido</button>
         </div>
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>
