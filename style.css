@@ -122,7 +122,6 @@ button:hover {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
     margin: 20px;
     padding: 10px;
     width: fit-content;
@@ -130,6 +129,8 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    max-height: 600px;
+    overflow-y: auto;
 }
 
 .img-detalhes {
@@ -182,6 +183,9 @@ td img {
 
     .janela {
         width: 90%;
+        top: -5vh;
+        max-height: 500px;
+        overflow-y: auto;
     }
 
     h1 {
